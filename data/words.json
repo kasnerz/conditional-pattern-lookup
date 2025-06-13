@@ -1,0 +1,1796 @@
+[
+  {
+    "input_sequence": "new wake goodbye jump child dark ocean write dry tree man no big have wake strong black give cold run small cat swim read bad grey think book light excited green house black dry work building adult tree light hello wet get cold take happy hate new drink learn old study want sleep earth slow bad study swim train play take read teach girl wet have write take grey wet want often fast strong light small no teach girl wet hate have air love strong building new yellow happy fire tired ocean happy child red read read bad girl think dance swim fire fast street jump warm write hello old think black tired sad river girl tired hate excited river always calm make fast blue get warm green adult tree sad friend tree like man tired learn learn book jump happy big red small read bad big think small sad play mountain ship mountain river wet often cold take read bad sad think eat calm rarely wet study bad forest wake house person building give mountain train white learn cold fire rarely family drink house make car water warm walk fast often fast strong cool work ship study excited black child red read ship want angry sleep green drink dance fly air cat blue forest mountain rarely love sometimes warm boy hello warm walk weak sometimes river old light cat study eat water cool need read bad baby take dance light run want always rarely family run forest ship cool goodbye study adult plane tired walk fast often read rarely no blue always big hot eat rarely never person girl boy strong want green cold take dark cold fire wake earth white cold wet think like book hello love girl woman dark sad book house have tree have white fast always bad yellow blue never dark slow maybe dark cold house weak tired dark cool water old tired maybe run boy love study big warm big run ship tree always give often warm tree want car never sleep book white walk fast often air calm blue yes yellow need warm building forest angry tree plane house like hot fast grey fly strong street adult give study dog bad eat red read man blue building cold read family green dog sad want slow strong tired cat yellow excited red cool weak work work always dry light read person learn play warm write fast drink ship often forest dance happy make hot cat rarely maybe wake cool make street child maybe never dark boy hate ocean woman need mountain plane plane dog rarely calm make wet family cold like work calm sleep hate run red house get new train green woman tired never woman want green angry fast book friend tired river hello think plane street play dog eat hello dark get train excited play excited ocean boy give hate water building book mountain river ocean drink sleep jump jump jump often give work excited earth earth man plane often dog think goodbye book think excited bad bad yes yes cold take baby cat like work forest music wake dry plane wake walk fast often blue maybe man think study red weak study strong baby plane person tired small like black mountain bad girl warm study rarely get walk white baby black dark sleep fly make hate light cool rarely white air maybe friend red learn adult grey book like fast weak green house jump sometimes no ocean family cool study family want need family angry dark river house sad ship write person grey dark street run new wake have like jump excited family street read angry street adult tired person excited forest light run dry walk friend sing sad good teach need play wake wake fast woman dark adult red read jump never excited river bad fire jump strong want music music big drink maybe person ocean rarely small book earth car get good wet calm air happy rarely ocean walk fast white yes sad dry give old take girl give street big fly like want ship house play study swim often grey old river street work get need calm man walk play need red building fly friend sometimes building maybe walk house ocean play write always calm person grey air mountain play big often mountain take eat dance ocean never like plane think never car mountain teach hello boy yellow strong strong calm get book sleep tree train big car ship train goodbye train green family dark calm rarely family have new baby cold wet give rarely good person forest bad old ship work sometimes excited tree dance work yellow take make love grey warm take fast fire get person hello boy river wet read like calm sing tired girl calm study dog hello excited white green green book want house forest red write woman happy cat fire teach happy hate sometimes sleep ship baby building dog earth make give big street black family walk good think white strong calm hate child red read man think walk grey plane warm happy excited mountain woman goodbye person air get slow dog blue small study never cool child red read music yellow play happy cat happy no happy woman often maybe house water jump love swim man building small black grey hate weak man love read take learn love good child red read good angry no strong bad big eat angry walk often white fly sleep small dog cold take play work write baby person small swim cold fire think cool always tree work white learn earth small warm water good black teach child red read man old give need excited wet train dog mountain sometimes angry strong boy fire old white yellow calm never strong good woman blue red tired house music small plane green fire dry ocean bad boy adult car no play big car child red read small sometimes weak water love need woman plane work cat love walk fast often plane dance walk warm swim ocean child blue",
+    "queries": [
+      {
+        "natural_language": "Find all sequences matching 'book think' that are preceded by 'goodbye'",
+        "pattern": "book think",
+        "constraint_type": "preceded_by",
+        "constraint_pattern": "goodbye"
+      },
+      {
+        "natural_language": "Find all sequences matching 'cold take' that are not preceded by 'often'",
+        "pattern": "cold take",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "often"
+      },
+      {
+        "natural_language": "Find all sequences matching 'red read \\w+' that are preceded by 'child'",
+        "pattern": "red read \\w+",
+        "constraint_type": "preceded_by",
+        "constraint_pattern": "child"
+      },
+      {
+        "natural_language": "Find all sequences matching 'walk fast' that are followed by 'often'",
+        "pattern": "walk fast",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "often"
+      },
+      {
+        "natural_language": "Find all sequences matching 'read bad \\w+' that are followed by 'think'",
+        "pattern": "read bad \\w+",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "think"
+      }
+    ],
+    "answers": [
+      [
+        [
+          2737,
+          2748
+        ]
+      ],
+      [
+        [
+          222,
+          232
+        ],
+        [
+          1497,
+          1507
+        ],
+        [
+          2772,
+          2782
+        ],
+        [
+          4973,
+          4983
+        ]
+      ],
+      [
+        [
+          501,
+          515
+        ],
+        [
+          1091,
+          1105
+        ],
+        [
+          4575,
+          4588
+        ],
+        [
+          4710,
+          4725
+        ],
+        [
+          4888,
+          4902
+        ],
+        [
+          5118,
+          5131
+        ],
+        [
+          5354,
+          5369
+        ]
+      ],
+      [
+        [
+          1022,
+          1032
+        ],
+        [
+          1395,
+          1405
+        ],
+        [
+          1842,
+          1852
+        ],
+        [
+          2834,
+          2844
+        ],
+        [
+          5426,
+          5436
+        ]
+      ],
+      [
+        [
+          116,
+          130
+        ],
+        [
+          510,
+          524
+        ],
+        [
+          768,
+          781
+        ],
+        [
+          851,
+          864
+        ]
+      ]
+    ]
+  },
+  {
+    "input_sequence": "make no make sing calm woman swim eat drink sometimes wet cool grey blue wet dry street train walk house make street yellow think excited cool take girl sometimes warm water friend maybe make adult make man play fly wake make always green have child jump friend street walk girl love plane wet tree old strong excited white angry wake walk walk like big wake river big hello yellow swim book dance cool hate train think walk person need sad never red excited get green music eat ocean fly green river house slow read woman wet house teach goodbye tired slow cool happy no excited river girl sing friend tree rarely girl make think get tree always wet drink play teach dark building light blue friend fire play work air tired learn angry love work eat dry fire old white ship think like bad excited want fly make fly earth need air have run river sleep yes earth warm water no girl walk blue grey hot always write write fly get girl house warm man excited wet walk make music ocean read earth always walk new calm adult strong always learn friend baby excited cat house music make rarely maybe calm read light blue happy friend ocean adult happy angry earth river train eat drink happy earth tree black study hello often train angry give learn slow plane earth learn take big river train like old adult get never fly get train water air earth boy cold old building earth hello never eat drink person rarely happy always small water slow jump sometimes building read earth small woman sleep light have white earth often woman fly write ocean strong building old strong good sad excited run think adult dark play learn adult hate hot boy good strong old hot earth fast swim dance hello work dance new white earth earth house hate sleep rarely slow goodbye car take teach air bad want adult cool write tired get girl hate warm run red house big get blue sing small fire street yellow dog hate think have goodbye street hello sleep woman sing teach earth teach black car sing rarely warm sometimes tired warm child adult good happy music ocean excited hot man dance dance adult learn white maybe person black girl fast adult old yes take cool plane swim good tree tree blue sometimes air man love earth always big yes work light sad think make maybe make man sleep air forest dark train sometimes red give learn no cat fly ocean red jump write like grey eat dry train river ship study street baby ocean dog dry no old tree work adult river cool strong drink hate child yes street give get jump jump cat fire new yellow building study man have adult river get goodbye grey wake small family boy want love always get warm take hot earth swim hot think music dark teach strong dog excited green grey dark often always boy often green house fast hate old dark jump building bad tired mountain always fly tree cold make sleep always tree old weak train forest earth old yellow sad small grey fast jump dark dry always give man slow good fire fast sometimes hello train big get mountain run red write play ship study earth house sad plane slow make cold mountain hate plane fast red like hate walk need white girl give house maybe ocean black happy bad never tree dry never friend adult hate always car make white make man learn make happy make tired tree white read give baby maybe jump happy water hot red family big dance girl fast house mountain hello sing small adult often small boy love sing sad hot sad work never make book make man teach book mountain dark house warm ship slow slow mountain learn blue earth person ocean always water good dark new dog sleep study plane wet hate fast want cold drink no teach hate have big wake drink think run wet hello book earth warm yellow eat learn learn building plane fast wet fire cat small think think hot rarely black sleep plane old air get wet red big take cool take excited love weak run want weak dog fire run baby weak excited happy house jump black mountain earth baby walk teach friend earth woman make need maybe never white white strong angry give learn never boy music music child blue girl cool strong run sing good yes need person teach need white ocean mountain tree wet fast good air eat green river slow street friend rarely earth always learn take white write run walk girl dance cool mountain warm man walk white boy book slow think white make earth give read yes tree teach family air mountain child water child dark weak work street take maybe grey earth cat jump new black run play hate river dance work walk like take wake new house study fire give sad cold woman red street give plane think study drink run earth hot calm dark tired take ocean often run like fire blue good no yellow swim eat drink house dry family often yellow mountain wake yellow train hello building boy angry slow learn like dance think fast fast eat red plane weak goodbye play bad black street read family river bad jump sad dry black get sing dance make grey baby bad water rarely adult slow water strong cold ocean read love blue dark maybe sometimes hello baby plane eat make book always hot make music fast cold man warm jump fly teach give dark wake building grey think excited weak jump warm yellow think red fast tree family cold white often read adult fast cold dog hot make hello make man make cold yes tired run river blue eat drink child want bad always red river sad sleep study mountain ship hate learn angry give learn sing forest fly bad music tree wet read want hate hot swim small music often cool fast boy",
+    "queries": [
+      {
+        "natural_language": "Find all sequences matching 'give learn' that are preceded by 'angry'",
+        "pattern": "give learn",
+        "constraint_type": "preceded_by",
+        "constraint_pattern": "angry"
+      },
+      {
+        "natural_language": "Find all sequences matching 'earth \\w+' that are not preceded by 'friend'",
+        "pattern": "earth \\w+",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "friend"
+      },
+      {
+        "natural_language": "Find all sequences matching 'river \\w+ \\w+' that are not followed by 'drink'",
+        "pattern": "river \\w+ \\w+",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "drink"
+      },
+      {
+        "natural_language": "Find all sequences matching 'drink \\w+' that are preceded by 'eat'",
+        "pattern": "drink \\w+",
+        "constraint_type": "preceded_by",
+        "constraint_pattern": "eat"
+      },
+      {
+        "natural_language": "Find all sequences matching 'make \\w+ make' that are followed by 'man'",
+        "pattern": "make \\w+ make",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "man"
+      }
+    ],
+    "answers": [
+      [
+        [
+          1231,
+          1242
+        ],
+        [
+          3993,
+          4004
+        ],
+        [
+          5359,
+          5370
+        ]
+      ],
+      [
+        [
+          815,
+          826
+        ],
+        [
+          855,
+          866
+        ],
+        [
+          985,
+          998
+        ],
+        [
+          1150,
+          1162
+        ],
+        [
+          1184,
+          1195
+        ],
+        [
+          1253,
+          1265
+        ],
+        [
+          1335,
+          1345
+        ],
+        [
+          1363,
+          1375
+        ],
+        [
+          1464,
+          1476
+        ],
+        [
+          1505,
+          1517
+        ],
+        [
+          1654,
+          1665
+        ],
+        [
+          1703,
+          1715
+        ],
+        [
+          1709,
+          1721
+        ],
+        [
+          1943,
+          1955
+        ],
+        [
+          2191,
+          2204
+        ],
+        [
+          2623,
+          2634
+        ],
+        [
+          2849,
+          2859
+        ],
+        [
+          3005,
+          3017
+        ],
+        [
+          3500,
+          3513
+        ],
+        [
+          3657,
+          3668
+        ],
+        [
+          3905,
+          3916
+        ],
+        [
+          4181,
+          4194
+        ],
+        [
+          4302,
+          4313
+        ],
+        [
+          4409,
+          4419
+        ],
+        [
+          4570,
+          4580
+        ]
+      ],
+      [
+        [
+          358,
+          374
+        ],
+        [
+          494,
+          511
+        ],
+        [
+          579,
+          595
+        ],
+        [
+          839,
+          855
+        ],
+        [
+          1274,
+          1291
+        ],
+        [
+          2362,
+          2379
+        ],
+        [
+          2543,
+          2561
+        ],
+        [
+          4149,
+          4167
+        ],
+        [
+          4448,
+          4465
+        ],
+        [
+          4843,
+          4858
+        ],
+        [
+          5306,
+          5322
+        ]
+      ],
+      [
+        [
+          37,
+          53
+        ],
+        [
+          1172,
+          1184
+        ],
+        [
+          1385,
+          1398
+        ],
+        [
+          4656,
+          4668
+        ],
+        [
+          5274,
+          5286
+        ]
+      ],
+      [
+        [
+          186,
+          202
+        ],
+        [
+          2233,
+          2249
+        ],
+        [
+          3191,
+          3207
+        ],
+        [
+          3410,
+          3425
+        ],
+        [
+          5215,
+          5231
+        ]
+      ]
+    ]
+  },
+  {
+    "input_sequence": "river dog need work never dog goodbye air hello good mountain sing man write blue big write wet love swim weak man big no white fly think tired calm dance baby give man street warm street light cool train old slow adult hot excited white calm wake good house dry fire yes river boy friend often warm dry dry study plane teach walk small man dark always play mountain adult ship write new car goodbye house man learn learn no read man street book wake walk blue child eat good family train happy calm red need study strong girl air eat tree learn blue strong like mountain read have old adult want book no always yellow dry house excited rarely cold like hot street no man street earth train dry dog adult need grey need drink warm make new train small always plane hate walk air tree calm play ocean never dog wake think book tree hate man family warm swim tired drink street need dog hot plane fast small man grey old study blue water calm light fire hello study calm fly dry swim music learn hot old sad like write big green think think person often ship old eat white person cold weak dry grey sometimes cat hello get eat study like dog fire ocean give maybe angry wet tree sleep baby goodbye light baby child tree big love car adult make new play swim fly drink house excited rarely river swim cold weak cat grey water tree black walk blue wet teach cold think friend study fly make building dog dark work red red old learn good teach train make cool wake maybe adult need plane light learn good woman happy green write building have always fast like angry sometimes small get study air forest light slow hello ship make fire ship walk teach read cat grey need light dance building hot air like mountain take never old never blue swim mountain take child maybe need sad happy man book friend big eat blue play girl small adult mountain street blue always tired good adult bad girl study small yellow read blue fly fast friend house ocean dark dog small goodbye tree wake man street want girl dance family jump train learn man friend child wet wake sing angry black new make give warm drink good get good wake give yes drink sad music white girl river swim adult house play make study woman love baby weak often cat teach learn read white new dark old sing train make rarely wake forest no fire dog earth woman drink light family teach dance old like hate want jump write need friend want green book slow car work yellow jump woman water new need fast small swim warm fire sing mountain yes ship blue fly no like strong sleep want black fly swim write hot fast strong learn air love house strong weak rarely like fly study teach fire blue love maybe play plane love teach like have dry boy jump want cool make house man excited need always river girl forest music fire take slow sad need sometimes wet green river wet black sing bad dark play think have warm strong weak old person maybe tired river friend boy weak child new music make fast like no teach fly want building take family grey book hot make swim no cool fast study walk never light play building never make building plane want run play house excited rarely hot write sing fly friend dog need girl excited study ship boy train run drink wet teach house adult need black fast grey weak hate fast eat yes eat small child play small make warm dark learn always fly like sleep good river train never boy read often river sing sad good love train read angry eat wet mountain family girl water cat goodbye river write jump dog blue run cat fast eat tired no sad sleep new old fire ship sad friend strong no play yellow book need air man baby fly read man sometimes take good big river earth river take building have happy get read green sing take new baby big old house happy house happy tired street angry love happy take good man street make hot water give work play learn sleep man old building adult need cat music forest red dry slow ship friend good new train wake girl music dry fly always no music get cold tired yes teach yes hate work hot river mountain never calm learn sleep fast hate ocean grey man street work mountain man big building car fire yellow music walk cat old have dance man walk calm angry like man teach drink write learn need ocean house excited want play like dry book earth strong person learn green house have big blue building want get teach book fire calm never slow plane like like wet weak sad street dry always big fire eat girl read sometimes grey excited forest mountain dog need make study yellow man always car wet work man good tired train sad fast give warm tired eat have family think green water dry man street street train learn train need work hate wake family forest cold learn happy think plane fast slow big dance small love warm yellow cat angry take forest water always grey ocean hate play calm learn yellow hello boy eat hate man run get need calm eat green cool dog house excited rarely sing forest fly goodbye sleep sleep happy give mountain train wake street calm train ship sleep train want weak train ocean small dark adult boy person teach sad maybe happy fire sad music excited black red hate make excited boy boy sometimes need light forest grey boy house excited rarely angry house excited rarely weak black person small house weak swim ocean sleep man think cat warm always dog warm never love have like dark plane street study book walk fast tree eat book excited green cool like think sleep",
+    "queries": [
+      {
+        "natural_language": "Find all sequences matching 'like \\w+' that are not followed by 'sleep'",
+        "pattern": "like \\w+",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "sleep"
+      },
+      {
+        "natural_language": "Find all sequences matching 'good \\w+ train' that are not preceded by 'take'",
+        "pattern": "good \\w+ train",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "take"
+      },
+      {
+        "natural_language": "Find all sequences matching '\\w+ \\w+ need' that are not preceded by 'take'",
+        "pattern": "\\w+ \\w+ need",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "take"
+      },
+      {
+        "natural_language": "Find all sequences matching 'man street \\w+' that are not followed by 'train'",
+        "pattern": "man street \\w+",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "train"
+      },
+      {
+        "natural_language": "Find all sequences matching 'house excited' that are followed by 'rarely'",
+        "pattern": "house excited",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "rarely"
+      }
+    ],
+    "answers": [
+      [
+        [
+          557,
+          571
+        ],
+        [
+          648,
+          657
+        ],
+        [
+          1005,
+          1016
+        ],
+        [
+          1130,
+          1139
+        ],
+        [
+          1549,
+          1560
+        ],
+        [
+          1693,
+          1707
+        ],
+        [
+          2348,
+          2358
+        ],
+        [
+          2610,
+          2619
+        ],
+        [
+          2674,
+          2684
+        ],
+        [
+          2944,
+          2952
+        ],
+        [
+          3327,
+          3338
+        ],
+        [
+          4175,
+          4184
+        ],
+        [
+          4243,
+          4252
+        ],
+        [
+          4365,
+          4375
+        ],
+        [
+          4370,
+          4379
+        ],
+        [
+          5321,
+          5331
+        ]
+      ],
+      [
+        [
+          470,
+          488
+        ],
+        [
+          1427,
+          1444
+        ],
+        [
+          3338,
+          3355
+        ],
+        [
+          3391,
+          3407
+        ],
+        [
+          3910,
+          3925
+        ],
+        [
+          4523,
+          4540
+        ]
+      ],
+      [
+        [
+          0,
+          14
+        ],
+        [
+          494,
+          508
+        ],
+        [
+          694,
+          709
+        ],
+        [
+          704,
+          719
+        ],
+        [
+          862,
+          880
+        ],
+        [
+          1459,
+          1476
+        ],
+        [
+          1650,
+          1664
+        ],
+        [
+          2363,
+          2379
+        ],
+        [
+          2434,
+          2449
+        ],
+        [
+          2718,
+          2735
+        ],
+        [
+          3142,
+          3158
+        ],
+        [
+          3212,
+          3229
+        ],
+        [
+          3571,
+          3588
+        ],
+        [
+          3848,
+          3868
+        ],
+        [
+          4196,
+          4213
+        ],
+        [
+          4459,
+          4477
+        ],
+        [
+          4627,
+          4644
+        ],
+        [
+          4842,
+          4855
+        ],
+        [
+          5129,
+          5148
+        ]
+      ],
+      [
+        [
+          164,
+          180
+        ],
+        [
+          429,
+          445
+        ],
+        [
+          1974,
+          1990
+        ],
+        [
+          3787,
+          3803
+        ],
+        [
+          4067,
+          4083
+        ]
+      ],
+      [
+        [
+          622,
+          636
+        ],
+        [
+          1265,
+          1279
+        ],
+        [
+          3102,
+          3116
+        ],
+        [
+          4879,
+          4893
+        ],
+        [
+          5170,
+          5184
+        ],
+        [
+          5197,
+          5211
+        ]
+      ]
+    ]
+  },
+  {
+    "input_sequence": "hot often learn maybe small learn read white learn weak red think run study drink dark fire want fly adult bad make play family sleep green excited never swim often friend dry get tree wake earth plane slow walk cold happy water have fly maybe new fire red child angry street angry tired swim cool warm learn building always swim dance run plane light weak study small person water girl teach sad forest dark small hello sometimes work hot ocean boy weak walk read sleep drink tired work wake man happy sing run street never hot calm wet write have learn swim run boy eat cat car angry friend building need green hello calm think small good walk train read wake eat tree give give book study excited old white want study green hot make hot house have green fast yellow music good eat often learn grey warm book blue have read teach hot blue love sing dry take family like new always family like ship give child train sleep always strong hate train house earth fly work earth warm book hello water maybe study make happy run black hello grey girl boy red learn hello book work green river strong child hot person bad bad like wet train tired plane river teach black eat family mountain bad weak make slow love friend family ocean boy angry work angry new black old tired car make play angry mountain street cold water boy tree dry wet yellow child give want rarely light sing teach never child dark good big house teach white make sleep sad get angry earth fly hot sad happy light fast strong think green cold boy adult want walk building fly maybe teach happy no swim run air work dry angry always jump person plane study excited write always goodbye walk often wake rarely green car hello have swim person car building slow dog water yellow take run adult read adult cold dog yellow car hate street weak bad person no book dry work sometimes never fire book man big car big tree wake adult play tree small black wet air cat cold need adult mountain always old have drink family green like walk red fast white run get fire fly play dry blue wet mountain take maybe friend train happy work write hate small want play sing dance no rarely new yes dry dark dance often grey air train strong often weak weak ship sleep river weak yellow learn friend sing girl dance sometimes excited excited girl write fly maybe sad get forest yes house study like fly have dry light black old work green jump house love river small want often music earth music river earth blue blue old sleep child maybe read building happy always sad dry write run bad forest weak hate ship think give get man small play make cool book man big plane hate walk blue maybe wet get person sometimes house plane teach sad fast jump wake take take green weak fast music have eat want maybe adult water dark take need blue teach wet train learn walk sing cold wake make dark blue book green want jump often need sleep maybe tired adult tired give blue friend plane cool forest wake give wake child new yellow girl old cat child happy hate yellow dark hate often walk weak write angry take book rarely building light friend like adult sad cold grey give water dog make small swim big learn old sad get new man plane often want black old yellow hate weak girl calm wake friend book fly maybe friend drink read walk building warm earth friend mountain new like sad work slow grey read grey family baby green write hot maybe book ocean black dark cat child black goodbye water bad wake train small sleep weak building woman adult sleep cool drink need cool sad dark jump black cat blue have water person boy think eat like boy swim train sad white big excited fire calm water hate get house dog play need building swim light like bad drink goodbye want man plane yes light baby hello always fly maybe green slow dry sleep dark blue learn tree dry yellow friend grey mountain happy tired earth work child plane have train adult light calm teach weak earth tired fly plane jump write get take house dark black grey teach adult rarely no green black old calm cat hello sad music family swim never make bad have friend warm house baby person black old person ocean mountain study plane tree woman rarely music excited book sad cat sometimes eat sometimes yellow forest sad hate strong light play light book tree fire make slow weak run child light hate family green child fast write ship street girl cat take think yes girl music new blue earth street no walk write dance friend weak like sad small think woman angry walk walk tired have fire write sleep fast love big girl adult person sad person music learn need goodbye warm dog music teach always fast child cat book person woman have eat never rarely jump give boy blue tree grey music new forest take play work drink dog slow tree cool ship old book man big always fly green eat need wake hello maybe hate warm girl excited street blue drink swim no drink girl person hate book blue tired never sad get like adult baby play make sometimes run river often street fast sad cool boy read think give tree music always tired mountain swim sleep swim tree dance air happy walk woman sleep cold have hello read forest goodbye family light hate often never old angry cool person sad get hate teach light tired make white work read maybe often grey small black eat drink walk light drink have tree yes often friend plane warm walk red wet never ocean calm ship wake family cat mountain dry book study love tired house fly maybe person think sleep green give ship",
+    "queries": [
+      {
+        "natural_language": "Find all sequences matching 'book man big' that are not followed by 'car'",
+        "pattern": "book man big",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "car"
+      },
+      {
+        "natural_language": "Find all sequences matching 'sad get \\w+' that are not followed by 'yes'",
+        "pattern": "sad get \\w+",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "yes"
+      },
+      {
+        "natural_language": "Find all sequences matching '\\w+ black old' that are not preceded by 'no'",
+        "pattern": "\\w+ black old",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "no"
+      },
+      {
+        "natural_language": "Find all sequences matching 'fly maybe' that are not preceded by 'have'",
+        "pattern": "fly maybe",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "have"
+      },
+      {
+        "natural_language": "Find all sequences matching 'blue \\w+ \\w+' that are not followed by 'child'",
+        "pattern": "blue \\w+ \\w+",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "child"
+      }
+    ],
+    "answers": [
+      [
+        [
+          2596,
+          2609
+        ],
+        [
+          4752,
+          4765
+        ]
+      ],
+      [
+        [
+          1435,
+          1449
+        ],
+        [
+          3152,
+          3164
+        ],
+        [
+          4902,
+          4915
+        ],
+        [
+          5178,
+          5191
+        ]
+      ],
+      [
+        [
+          1249,
+          1263
+        ],
+        [
+          2357,
+          2373
+        ],
+        [
+          3180,
+          3195
+        ],
+        [
+          4086,
+          4103
+        ]
+      ],
+      [
+        [
+          1537,
+          1547
+        ],
+        [
+          2298,
+          2308
+        ],
+        [
+          3239,
+          3249
+        ],
+        [
+          3746,
+          3756
+        ],
+        [
+          5416,
+          5426
+        ]
+      ],
+      [
+        [
+          810,
+          825
+        ],
+        [
+          835,
+          850
+        ],
+        [
+          2035,
+          2053
+        ],
+        [
+          2453,
+          2467
+        ],
+        [
+          2625,
+          2640
+        ],
+        [
+          2777,
+          2792
+        ],
+        [
+          2834,
+          2850
+        ],
+        [
+          2906,
+          2924
+        ],
+        [
+          3536,
+          3552
+        ],
+        [
+          3782,
+          3798
+        ],
+        [
+          4385,
+          4403
+        ],
+        [
+          4671,
+          4686
+        ],
+        [
+          4838,
+          4854
+        ],
+        [
+          4885,
+          4902
+        ]
+      ]
+    ]
+  },
+  {
+    "input_sequence": "wet never tree want sad river drink sad adult cat rarely happy work walk rarely car river take swim walk sad ocean mountain goodbye excited house dog play dog fly love walk sad tree sleep new drink earth warm mountain often girl sing no air man plane write like jump sometimes tree always woman strong new wet bad bad yellow always weak calm yellow black sometimes air forest weak house angry read study excited like have building maybe water house fire friend hello air girl warm sad happy cat baby train often book tired often family small small book sing new have tired always walk strong girl angry angry forest yellow sing child study maybe play river run yes slow no white goodbye sleep never rarely new eat walk sad make good excited adult earth cold angry new car read excited black often good dark red air bad jump mountain big sing blue book ship mountain learn street hello old car excited weak often ship yellow house train family fly earth friend woman walk car work ocean hello write ship have excited girl learn calm make yes light bad give tired family never run hate house write hello water good slow write jump big excited angry eat ship eat small river slow sing sometimes light sleep woman weak house slow child work study cat family fly grey dry fast friend happy white weak swim house family car drink child no adult sing run dark bad new baby black calm happy family angry child often street black blue boy cool walk sad warm sleep never grey sleep give ocean maybe fast man girl learn learn ship goodbye yes black cat forest train grey book green person sad mountain study excited white building love black river often black girl hot take give child cool friend study excited water building bad never car sing book friend wake work dance often give street fast study excited dog walk family building plane house get air friend goodbye person air baby person slow big hot happy sometimes often red love hate black earth hello light wet sleep earth swim study fire fast child forest bad swim family friend happy wake fly give hello ship dance learn dark book drink fly friend read teach give need get grey cool learn hot think house study need run music maybe swim red no swim grey man learn street happy dog fly fast dark woman dark hate woman play music eat fire want forest swim take plane goodbye sad fire boy dog learn sad need forest air jump river strong dark like car tree ship sometimes get often small need big cold teach good river strong drink never no man boy baby fire water cool woman read think cold child ocean tired ocean study small black dog fast excited like read big building no happy man child plane adult tree study excited maybe building bad give make need yes baby run grey mountain white weak learn sometimes dance drink sad teach red ship friend make need black white take work yellow want new love plane building light need old no give learn bad no good slow often walk sad house air need angry swim green ship family angry rarely hello maybe house green sing music walk excited teach train jump walk child red happy play strong hello slow sleep calm dry eat red dark fire dark boy play study wake warm fly like sing new maybe dark water child earth happy fire forest river warm sometimes house run take big friend bad bad write weak yes good sad dog wake woman happy never forest water walk sad eat fly often yes walk weak often dog angry friend give white think have cold green run car street play music study excited fly building child big family teach plane old baby dog new love goodbye dog excited fast angry yellow family yes weak weak slow take wake girl strong music old tree maybe house make green bad ocean mountain weak wake get run forest black adult study family mountain make water angry book dog white grey red fire dance sleep jump house teach rarely like dry book maybe tree read man yellow teach need air walk angry earth green sad give old family cat child rarely give bad take excited warm walk sad adult teach bad never write walk goodbye grey excited want angry sad slow grey like car small grey boy man strong white house run big work plane mountain slow small wet yellow drink learn swim eat hello white strong dark earth grey ocean yellow maybe river new jump green fire grey walk like family maybe sometimes friend train slow light big friend boy dance blue sing never forest train like warm air tired sometimes angry train building house sometimes house learn happy think calm green give need take need teach white jump book study car friend book dance happy love train adult write sometimes fly plane cat run family dry make new tired fire friend street play water child happy river train no blue eat no light play friend white blue strong dry music hot learn strong yes study cold cold sometimes girl child hello light yes jump goodbye read adult family plane big white grey swim cat calm good rarely strong make dog angry run sad often get blue person study excited want building baby plane cool baby grey work warm forest study air eat ship person fire ocean play mountain big ocean blue child new hot train blue yes weak yes walk study excited dog building work blue maybe angry man swim write strong mountain big take learn woman ship woman child yellow white cat fire write tired get blue mountain ocean run cold music strong tree dry give give always take child always sometimes work make water dog wake old child calm cat study excited boy person sleep yellow woman sad weak mountain big mountain cool maybe new earth light run often read excited red big",
+    "queries": [
+      {
+        "natural_language": "Find all sequences matching 'friend \\w+ \\w+' that are not preceded by 'fire'",
+        "pattern": "friend \\w+ \\w+",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "fire"
+      },
+      {
+        "natural_language": "Find all sequences matching '\\w+ walk sad' that are not followed by 'house'",
+        "pattern": "\\w+ walk sad",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "house"
+      },
+      {
+        "natural_language": "Find all sequences matching '\\w+ learn' that are not followed by 'street'",
+        "pattern": "\\w+ learn",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "street"
+      },
+      {
+        "natural_language": "Find all sequences matching 'mountain big \\w+' that are not followed by 'blue'",
+        "pattern": "mountain big \\w+",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "blue"
+      },
+      {
+        "natural_language": "Find all sequences matching 'study excited \\w+' that are followed by 'building'",
+        "pattern": "study excited \\w+",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "building"
+      }
+    ],
+    "answers": [
+      [
+        [
+          952,
+          970
+        ],
+        [
+          1271,
+          1290
+        ],
+        [
+          1678,
+          1699
+        ],
+        [
+          1738,
+          1755
+        ],
+        [
+          1843,
+          1865
+        ],
+        [
+          2020,
+          2038
+        ],
+        [
+          2090,
+          2108
+        ],
+        [
+          2788,
+          2805
+        ],
+        [
+          3258,
+          3273
+        ],
+        [
+          3390,
+          3408
+        ],
+        [
+          4285,
+          4303
+        ],
+        [
+          4313,
+          4330
+        ],
+        [
+          4513,
+          4531
+        ],
+        [
+          4694,
+          4712
+        ]
+      ],
+      [
+        [
+          94,
+          108
+        ],
+        [
+          162,
+          176
+        ],
+        [
+          709,
+          722
+        ],
+        [
+          1429,
+          1443
+        ],
+        [
+          3331,
+          3346
+        ],
+        [
+          3956,
+          3970
+        ]
+      ],
+      [
+        [
+          1015,
+          1026
+        ],
+        [
+          1497,
+          1508
+        ],
+        [
+          1502,
+          1514
+        ],
+        [
+          2058,
+          2070
+        ],
+        [
+          2127,
+          2138
+        ],
+        [
+          2335,
+          2345
+        ],
+        [
+          2736,
+          2747
+        ],
+        [
+          2881,
+          2892
+        ],
+        [
+          4146,
+          4158
+        ],
+        [
+          4426,
+          4438
+        ],
+        [
+          4729,
+          4739
+        ],
+        [
+          5197,
+          5208
+        ]
+      ],
+      [
+        [
+          5184,
+          5202
+        ],
+        [
+          5462,
+          5484
+        ]
+      ],
+      [
+        [
+          1590,
+          1610
+        ],
+        [
+          1685,
+          1705
+        ],
+        [
+          2655,
+          2675
+        ],
+        [
+          3456,
+          3474
+        ],
+        [
+          4933,
+          4952
+        ],
+        [
+          5113,
+          5131
+        ]
+      ]
+    ]
+  },
+  {
+    "input_sequence": "always wake calm jump often sometimes often learn think want big ocean run mountain write goodbye think write dry bad tired hello learn swim always small dance maybe learn often strong work wet hot green warm get ship eat no sleep sing often love baby green mountain man weak sad need sleep run strong warm street mountain book dog good love sometimes train cold family goodbye get man want want have need yes think excited person calm slow no sing cool train water family blue street drink always sing hello friend forest hello hate ocean yes have drink friend girl take teach swim happy plane drink always plane have weak man plane angry love wet get hello music warm learn warm friend calm rarely angry yes green child weak work ocean grey jump baby get ocean yes house good girl street plane child train sad weak man train strong family goodbye baby cold street yes grey ocean train like hello baby street person run man new write small yellow wake girl woman warm hot like always hello dark teach person water happy wet dance fire adult street sometimes dark book jump yes person teach excited plane slow hate cold building sing walk river need cool dry mountain dry never hot read tree always white dance sad earth bad think water write music sad study person water girl excited ship mountain often always forest wake ship dry white write rarely good red cat never always adult mountain river white dance building warm teach weak man plane angry tired air work earth cool earth warm get fast building walk sleep water maybe no yes red cat cold fast always wake yes small tree girl mountain dark cool building small fast write child boy weak work weak man plane angry dance white light take play jump dog blue ocean weak slow cool goodbye music baby earth yellow building old angry black book old tired slow tired dry get tree often write grey drink old air good black need cold green house take slow ship mountain teach yes wet person often dry always slow train yellow light never car sad bad rarely fly yes old read sing music car cat woman maybe sad wake have teach fire always ship dark give wake river forest swim never hot bad need child hello family man work wet always building tired fly bad fast walk small boy grey green hot angry sometimes sad plane give person water jump music bad cold think teach water fire white excited learn hello work get ship fly plane give never river love like friend teach fire small building walk no calm music cat love maybe read get goodbye take like cool teach girl learn slow like take woman angry fast love run read book car small grey want sleep goodbye green jump want love new baby cat swim bad dance play green river hot walk jump book read hate building yes plane give person green book wake no wet no warm strong book run warm write ocean happy goodbye think fly train street family music building river sleep building excited red friend dog sleep strong fire grey play building car grey love love angry cool rarely forest green friend sing car maybe take car yellow make train take child hello man work think want always always grey angry cold earth dry good sing adult water sad tired dance never play street hello book have sing small jump yellow teach person swim water bad want blue old white small music family eat slow good love river water need slow slow hello angry teach teach drink goodbye jump run green want big street bad want warm excited tree walk maybe girl hot sometimes small big ocean give tired yellow like friend dark happy dark bad building eat water good cat friend river no mountain grey hot happy black rarely read man water plane person take goodbye dance man fire small happy sometimes dark sometimes woman adult dance have eat walk drink car dry play walk sing fire yellow walk adult sometimes drink man dry strong train light jump write boy car cat man house teach bad girl want have wet drink take play hot weak man plane angry black eat plane give boy man have take big sad good work cool wet book swim read blue tree jump need street read train old family goodbye good fire rarely rarely happy tree bad never mountain write bad friend boy adult think plane water run light walk adult forest sing white wet earth happy yes play fire red house bad ship write read weak white train building earth need want sing write mountain car building play baby music run dark house eat ocean take house drink play love dance often child like give calm strong fast new dry dark learn black plane man wet cool give weak man plane dark never family man yes get music want train fire family goodbye blue sad often hot get plane give water play write street excited angry dance red yes dark adult jump cool swim person car boy forest excited child black book give yes slow earth want building forest work play read yellow strong cool red good weak man plane good good water happy good dark need car drink wet often wake man have child have earth plane grey never music get friend person dry light sing dark train calm tired cool sing dance hate train hate cold give person study often street house mountain cat adult wet hello cat hello wake sleep no forest cool get fire happy dog sleep study wake swim white happy plane new ocean grey angry have eat get dry ocean yellow slow jump adult house calm rarely train grey family goodbye fast river light give have friend get excited never red like want need train friend family goodbye hello strong get swim run learn warm green swim ship dog make tired man jump cool train work fast music family car take",
+    "queries": [
+      {
+        "natural_language": "Find all sequences matching 'weak man plane' that are followed by 'angry'",
+        "pattern": "weak man plane",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "angry"
+      },
+      {
+        "natural_language": "Find all sequences matching 'person water' that are not preceded by 'study'",
+        "pattern": "person water",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "study"
+      },
+      {
+        "natural_language": "Find all sequences matching 'train \\w+ family' that are followed by 'goodbye'",
+        "pattern": "train \\w+ family",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "goodbye"
+      },
+      {
+        "natural_language": "Find all sequences matching '\\w+ \\w+' that are followed by 'water'",
+        "pattern": "\\w+ \\w+",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "water"
+      },
+      {
+        "natural_language": "Find all sequences matching 'plane give' that are not followed by 'person'",
+        "pattern": "plane give",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "person"
+      }
+    ],
+    "answers": [
+      [
+        [
+          618,
+          633
+        ],
+        [
+          1430,
+          1445
+        ],
+        [
+          1651,
+          1666
+        ],
+        [
+          3894,
+          3909
+        ]
+      ],
+      [
+        [
+          1001,
+          1014
+        ],
+        [
+          2271,
+          2284
+        ]
+      ],
+      [
+        [
+          351,
+          369
+        ],
+        [
+          820,
+          840
+        ],
+        [
+          4028,
+          4045
+        ],
+        [
+          4544,
+          4562
+        ],
+        [
+          5277,
+          5295
+        ],
+        [
+          5374,
+          5394
+        ]
+      ],
+      [
+        [
+          448,
+          459
+        ],
+        [
+          995,
+          1008
+        ],
+        [
+          1220,
+          1230
+        ],
+        [
+          1252,
+          1265
+        ],
+        [
+          1506,
+          1517
+        ],
+        [
+          2266,
+          2278
+        ],
+        [
+          2304,
+          2316
+        ],
+        [
+          3116,
+          3127
+        ],
+        [
+          3212,
+          3224
+        ],
+        [
+          3287,
+          3298
+        ],
+        [
+          3511,
+          3524
+        ],
+        [
+          3592,
+          3601
+        ],
+        [
+          4134,
+          4146
+        ],
+        [
+          4593,
+          4604
+        ],
+        [
+          4828,
+          4838
+        ]
+      ],
+      [
+        [
+          2371,
+          2382
+        ],
+        [
+          3925,
+          3936
+        ],
+        [
+          4593,
+          4604
+        ]
+      ]
+    ]
+  },
+  {
+    "input_sequence": "street earth think need strong warm maybe learn family adult fire teach play girl excited yellow water girl run hello study sleep blue old sometimes red sleep often get take study want old have tree baby woman play walk give woman eat excited have fly swim read write boy warm wet sad wake street water have read water good study music family book car house slow calm baby make teach hate play have eat strong hate study music baby angry earth eat car dark rarely always cold work air woman tired read dog think cool boy love fire family dance think fly give dog read family get hello family have fast fire always sad light fast strong like teach big air cat building book child cold take run swim boy love blue light fast forest write adult family like run water girl teach hello want forest strong slow big family fast dance play read need drink swim dry have friend think hate grey dog study tired earth fire walk woman new angry green have jump warm plane dog think fly dry tired make hello grey boy street building plane grey walk sad strong water have read bad baby sad street play grey air music woman dry car air green need calm music forest earth white like read man fly ship house jump sad like person car new girl take bad street wake take man water girl weak give woman think fire water have read man happy swim street water have read play take eat green maybe yellow often girl dog cat earth good boy dark no bad goodbye write strong blue adult girl house plane walk wet music grey like dog play need hello sometimes think old teach want angry cold white red book good sometimes grey learn write need read friend maybe car grey water girl air girl no tree person street house rarely air never maybe read plane man happy eat work learn need green drink have river book always baby maybe light excited baby fast earth drink dark blue sleep ocean goodbye angry study calm child learn calm play earth ship warm forest love forest big water have read give bad love white read strong fly ship sometimes water girl hello think grey need wake yes play light forest take car hello earth car old friend have read run black excited house think sing big cold wet sometimes study music baby earth adult love man angry have read fly ocean dog person wake walk air dance ocean person often hello book give cold woman house read work dark mountain green sing water have read man building forest big angry train angry forest calm car drink cold cool music take take man dog small dog street make friend often big train swim have fly need yellow jump calm teach car red love dance forest white bad building black learn train wake light often get jump happy black learn make need like weak street strong boy wake love cool fast hate never need music air yellow yellow play book car friend light eat dark jump bad street child earth cool dog adult have car forest friend often wake give boy train make cat plane often always always building drink dark learn rarely black car man blue book need jump green work wet study music baby mountain need dog swim bad man teach goodbye grey sad hello fly ship girl air study wake good yellow jump man good dry house cold ocean white want woman love study teach sad earth dance wet man jump make child hot building family small girl river tired cool green white person earth adult yellow house good small house light make dance book friend need think woman music air drink walk want have walk take often cool wet teach happy angry plane strong hot water have read street music building ocean take sing calm think study play yellow jump teach love yellow need maybe hello new learn plane write building building happy family cool house dark water girl happy never cool fast need eat love old need river fire write swim learn water earth want adult water learn building rarely goodbye cold house often street red jump good forest tired earth tired friend give yes girl tired fire girl jump dog dark dog fire slow work swim car walk woman dark blue excited dog black run think music river man no read blue fly ship dog music strong man have water girl cat dark blue tired get need hello train music weak take ocean light never blue love hello red woman make study music girl green maybe cat building take study sleep air like get woman maybe sad black book black study goodbye study red teach fly excited new dog rarely big red often dark building sleep boy weak water water girl happy work sleep light read ship fly ship swim think calm study hot black person weak angry hot car jump excited earth cold teach slow mountain car dance walk take weak black wake bad girl no love read have man bad dog sleep air cool maybe black maybe cool cat excited house new warm friend hello sing never hot river baby green need maybe teach green need warm white dry car green red run adult water learn wake car eat make hate slow tree hate earth baby swim drink hate cat write angry read slow fly ship house drink bad happy drink grey light warm person goodbye give hot think yellow study fire work fire fast learn dog white book get teach wet eat wake read yellow fly drink mountain forest dry river tree forest red small tree hello fly cold big maybe never dark sleep dry sometimes jump learn walk adult book eat small hate think light angry weak have read have strong black building blue cool yellow black blue person tree give train music sing work study music baby jump write no big sing angry no boy think sad want walk",
+    "queries": [
+      {
+        "natural_language": "Find all sequences matching 'have read \\w+' that are preceded by 'water'",
+        "pattern": "have read \\w+",
+        "constraint_type": "preceded_by",
+        "constraint_pattern": "water"
+      },
+      {
+        "natural_language": "Find all sequences matching 'water girl \\w+' that are not followed by 'work'",
+        "pattern": "water girl \\w+",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "work"
+      },
+      {
+        "natural_language": "Find all sequences matching 'study music' that are followed by 'baby'",
+        "pattern": "study music",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "baby"
+      },
+      {
+        "natural_language": "Find all sequences matching 'hello fly' that are followed by 'ship'",
+        "pattern": "hello fly",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "ship"
+      },
+      {
+        "natural_language": "Find all sequences matching '\\w+ read \\w+' that are followed by 'fly'",
+        "pattern": "\\w+ read \\w+",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "fly"
+      }
+    ],
+    "answers": [
+      [
+        [
+          302,
+          318
+        ],
+        [
+          1052,
+          1066
+        ],
+        [
+          1298,
+          1312
+        ],
+        [
+          1336,
+          1351
+        ],
+        [
+          1948,
+          1963
+        ],
+        [
+          2361,
+          2375
+        ],
+        [
+          3485,
+          3502
+        ]
+      ],
+      [
+        [
+          96,
+          111
+        ],
+        [
+          757,
+          774
+        ],
+        [
+          1254,
+          1270
+        ],
+        [
+          1640,
+          1655
+        ],
+        [
+          2009,
+          2026
+        ],
+        [
+          3671,
+          3688
+        ],
+        [
+          4069,
+          4084
+        ]
+      ],
+      [
+        [
+          414,
+          426
+        ],
+        [
+          2173,
+          2185
+        ],
+        [
+          3006,
+          3018
+        ],
+        [
+          5367,
+          5379
+        ]
+      ],
+      [
+        [
+          3077,
+          3087
+        ]
+      ],
+      [
+        [
+          1161,
+          1175
+        ],
+        [
+          1972,
+          1990
+        ],
+        [
+          4021,
+          4034
+        ],
+        [
+          4425,
+          4441
+        ],
+        [
+          4891,
+          4907
+        ],
+        [
+          5062,
+          5079
+        ]
+      ]
+    ]
+  },
+  {
+    "input_sequence": "man street like weak like work read fire goodbye no like work read swim angry street wake swim house woman boy baby slow river new fly green tired strong sleep calm read car friend hate tired want think light woman often learn fire excited play hate often cold need good good tree tree child take study dark forest green blue big excited water music child tired think dance river family never woman think drink maybe bad tired train building cool strong jump dry tired teach jump rarely walk sleep adult play swim get child light ocean want take jump eat jump dark blue car girl book fly never dog small car cold boy car walk family black goodbye swim study dark forest green dance think light tree need maybe fire tired think sometimes study plane blue car cat forest dark old cat swim mountain light mountain light learn green blue need house hello angry ocean excited like work read building excited fast like excited bad swim adult teach make strong grey write warm woman woman walk think happy give walk small black street dry black rarely hate weak like work read goodbye sleep make big small man sad calm girl tired think hot old car tree big give ship get goodbye cool dark forest green work yellow happy always dark forest green ocean happy learn drink think blue cool sad boy fly dry bad weak love maybe dry walk big light street ship no adult river play fast give fire work bad work cool have love excited write woman hot walk building new tree cool white give need sing man often slow learn like black run man get earth weak black girl angry run good take excited sing never hot cool light hello walk new tree white slow bad bad sad woman goodbye yellow maybe train ocean weak friend ship slow forest wet book tired sad like fire tired learn plane jump take hot sleep hate write maybe good child man maybe book fire fast plane rarely fast dog fast love man train no bad street jump family ship street man run run like work read angry rarely swim need eat yellow hot person blue train calm child sleep dance think good girl teach rarely give baby wet make adult ship hate dry car fire take want light never walk small excited red hate car warm building warm read dry girl dance never angry good hot hello angry want baby music teach teach rarely give dark hate think girl big work grey bad calm green fire never family person new dog maybe write no study dark forest green friend big eat never baby calm earth green fire woman read sad never never read river tired teach music building teach rarely give love wet hate sad air cat girl teach slow walk house light building make cold book calm white rarely cold often girl white give sing mountain read jump music sometimes bad like work read yes excited sing like work read music tired car drink read good make goodbye strong old give tree think car ocean light sometimes family make music play water fire baby excited girl man music man river strong tree calm friend river want plane always friend no car happy give often teach love teach rarely give dark water make tree fast boy work air small mountain rarely excited new read street man red hot swim warm work want woman boy warm play cold bad tree maybe walk happy calm weak fast write goodbye red train yellow give old want blue walk run baby happy teach rarely give big read woman dance sad small slow ship write man friend sad blue building need light think new forest play adult air need sometimes woman make work street fast train walk hot work work child water hello think person work write think light often train angry read like work read fire like good green run wake dog think always maybe bad old car sometimes happy slow ship goodbye child drink tree angry maybe weak teach read love friend hate happy small drink no dog cold tree cold slow man yes give cool small old read red earth fire read house yes house big river dry slow ocean cold drink maybe child have study tree fire strong get sometimes have forest warm car jump building bad fly building hot family light angry hate excited jump hate boy new write forest work car weak sometimes adult goodbye read hate slow swim angry often goodbye get white street old tree hot adult warm hello big teach rarely give need angry jump person excited never sing grey think water cold study dark forest green run sing dry weak love friend friend blue old new white want dry cool cold hate light want fly red sometimes eat plane teach rarely give want ocean black sing walk blue air hate always like hot tired like work read tree cold blue forest good yellow get no house rarely have tree child dance house eat building wet angry drink take weak wake sing have read eat book river plane like read sing give sing make eat baby yellow no read sing walk sad swim baby think train excited wake green sometimes drink yellow take grey tree adult black hot never train car forest adult dry music train wake bad calm dog calm bad tired fly take sing need blue street ship fly hate big red play think light teach child hate yes take think light forest weak wet friend slow have family calm jump like dance wet no family slow bad hate street have give maybe adult never child cool hello tired want drink eat book want dog street read boy angry sleep dog grey want red excited grey family write woman woman sometimes eat hot read ship never get hello sometimes yellow woman dark often no small yes sometimes fast girl never friend ocean love white book water tired teach fast run maybe child green forest",
+    "queries": [
+      {
+        "natural_language": "Find all sequences matching 'teach rarely give' that are not followed by 'dark'",
+        "pattern": "teach rarely give",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "dark"
+      },
+      {
+        "natural_language": "Find all sequences matching 'like work read' that are not preceded by 'weak'",
+        "pattern": "like work read",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "weak"
+      },
+      {
+        "natural_language": "Find all sequences matching 'think light \\w+' that are not followed by 'weak'",
+        "pattern": "think light \\w+",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "weak"
+      },
+      {
+        "natural_language": "Find all sequences matching 'fire \\w+ \\w+' that are not preceded by 'green'",
+        "pattern": "fire \\w+ \\w+",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "green"
+      },
+      {
+        "natural_language": "Find all sequences matching 'dark forest green' that are preceded by 'study'",
+        "pattern": "dark forest green",
+        "constraint_type": "preceded_by",
+        "constraint_pattern": "study"
+      }
+    ],
+    "answers": [
+      [
+        [
+          2034,
+          2052
+        ],
+        [
+          2496,
+          2514
+        ],
+        [
+          3264,
+          3282
+        ],
+        [
+          4174,
+          4192
+        ],
+        [
+          4399,
+          4417
+        ]
+      ],
+      [
+        [
+          51,
+          66
+        ],
+        [
+          870,
+          885
+        ],
+        [
+          1924,
+          1939
+        ],
+        [
+          2686,
+          2701
+        ],
+        [
+          2718,
+          2733
+        ],
+        [
+          3546,
+          3561
+        ],
+        [
+          4480,
+          4495
+        ]
+      ],
+      [
+        [
+          196,
+          214
+        ],
+        [
+          681,
+          698
+        ],
+        [
+          3511,
+          3529
+        ],
+        [
+          4956,
+          4974
+        ]
+      ],
+      [
+        [
+          35,
+          51
+        ],
+        [
+          226,
+          244
+        ],
+        [
+          709,
+          726
+        ],
+        [
+          1374,
+          1388
+        ],
+        [
+          1736,
+          1753
+        ],
+        [
+          1822,
+          1838
+        ],
+        [
+          2090,
+          2105
+        ],
+        [
+          2860,
+          2878
+        ],
+        [
+          3561,
+          3576
+        ],
+        [
+          3810,
+          3826
+        ],
+        [
+          3900,
+          3916
+        ]
+      ],
+      [
+        [
+          302,
+          320
+        ],
+        [
+          657,
+          675
+        ],
+        [
+          2365,
+          2383
+        ],
+        [
+          4262,
+          4280
+        ]
+      ]
+    ]
+  },
+  {
+    "input_sequence": "weak write no need train tree calm read hello white plane cat yellow fly dog house excited tree friend walk need no dog person wake yes want black run teach baby car take learn bad good love wet music dark white sleep happy make plane red good black make rarely street get man earth friend river yellow read fly often fire hello plane learn tired learn get boy excited house dance dog plane hello dance want sad wet forest learn make take cat light water plane sing tree goodbye drink baby swim man hello river ocean run get take cat take bad never good dry car old no green person hello calm plane cat angry adult water woman tree yes take cat street happy forest big angry strong teach strong wake bad no tree teach give take light forest play cold friend bad maybe excited street tired no get book take slow man want dance dry train adult hot woman air think study tired often never teach maybe cool train play hot sing old music love green run friend sometimes book man river woman friend white sleep dance maybe happy hello dry tree drink sing often big family adult forest write street dry play excited warm plane music red think weak good yellow get dance love sleep friend never sing swim earth red always happy wake tired hello dog get wake adult think calm old baby work baby cool child light cool dry slow person fire fly river ship always street plane yellow study study baby ship fast baby baby sad happy ship excited never sad fly drink think hello calm plane sleep slow book ship always earth run train goodbye make black yes think happy grey swim building boy jump think like fire cat always tired tired walk grey tree family black sometimes mountain angry new boy yellow need need fire wake run fly bad happy take cat bad good angry fire hate fly fast light book tired car take cat boy river fire good want read swim jump slow grey dance book black love angry slow mountain water black girl ocean blue old person make big calm water make wake swim give friend plane building drink mountain sing walk earth always like always earth sleep goodbye dry jump run house white mountain calm strong play black family car strong often happy river black cold water dark air river happy air dry green rarely weak dark like forest run need dark sleep rarely family hate building teach yes jump jump angry sad jump excited hate sleep take drink light sing drink fire girl good fast yellow house run white strong sleep red work make calm angry need small take cat house fast dance sleep fire swim study no yes plane sad man tired run car new no work work sometimes good plane learn river warm angry new ship want bad boy woman eat new give study new eat angry need small calm maybe goodbye grey run calm slow girl teach ship ship man wet red old like excited adult air baby run hot friend hot family new happy sad small hello dry plane black bad get music white old sleep jump tree building building good forest sing water eat forest person good street teach sing hello have plane sometimes take ocean ocean girl like black sad dog sometimes sometimes baby jump goodbye car give teach train person light family light want weak earth black yellow woman drink make work calm old want yes yes street hot new yes street take cat need take cat earth street think study yes slow yes hello sing plane ship dark take person child give eat street run sing weak fly never happy big study street plane old train dog want drink house baby take want teach drink book music plane train maybe always want old tired calm read angry need small train baby dog hot tree strong man small want give like fire often black dry have plane need often jump weak hate white never family study calm grey water goodbye calm wet white ocean blue man house rarely like green person child always yellow drink baby walk earth weak goodbye make calm slow black often book earth good excited angry need big eat maybe cold black give good girl old slow water dance often wake fly excited water love like warm fire person give white dog boy hate person hello strong fast blue sing train person get run mountain earth cold dog write plane sing angry hate fire yellow forest ocean car drink teach forest ocean person yellow study mountain wet learn good love bad give black good train fire house walk white house child cool tree bad book fire play building white woman forest swim black often write person often yellow music boy no hello girl book fire earth always calm strong light boy old bad black red need boy slow girl book music wet forest excited black book make make hello building plane fly calm eat river sleep jump fly air ship give yellow hello never water wet yellow work goodbye happy baby get music jump make dog train forest make tired dry green friend always yellow black learn street street girl make tired tree run wake ocean often angry need small have teach never girl house write love fly sleep cold love maybe angry read dance like big air mountain baby friend water like excited wake water give yes yes maybe person sleep water white hot play black hate love black think study drink think study dog have plane excited tired green warm tired work fly run sleep red goodbye wake dry want think boy always write take wet person earth water learn hello fire house take cat slow sad white weak walk excited think want have plane ocean train maybe cold excited play wake dark calm no bad give train book dry give sing dark play hot often jump sleep sing happy get light read write often friend",
+    "queries": [
+      {
+        "natural_language": "Find all sequences matching 'think study' that are not preceded by 'air'",
+        "pattern": "think study",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "air"
+      },
+      {
+        "natural_language": "Find all sequences matching '\\w+ angry need' that are followed by 'small'",
+        "pattern": "\\w+ angry need",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "small"
+      },
+      {
+        "natural_language": "Find all sequences matching 'plane \\w+' that are preceded by 'have'",
+        "pattern": "plane \\w+",
+        "constraint_type": "preceded_by",
+        "constraint_pattern": "have"
+      },
+      {
+        "natural_language": "Find all sequences matching 'hello \\w+ plane' that are not followed by 'cat'",
+        "pattern": "hello \\w+ plane",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "cat"
+      },
+      {
+        "natural_language": "Find all sequences matching 'take cat' that are not preceded by 'get'",
+        "pattern": "take cat",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "get"
+      }
+    ],
+    "answers": [
+      [
+        [
+          3254,
+          3266
+        ],
+        [
+          5053,
+          5065
+        ],
+        [
+          5071,
+          5083
+        ]
+      ],
+      [
+        [
+          2435,
+          2451
+        ],
+        [
+          2652,
+          2667
+        ],
+        [
+          3507,
+          3523
+        ],
+        [
+          4809,
+          4826
+        ]
+      ],
+      [
+        [
+          2977,
+          2993
+        ],
+        [
+          3611,
+          3622
+        ],
+        [
+          5092,
+          5106
+        ],
+        [
+          5306,
+          5318
+        ]
+      ],
+      [
+        [
+          1456,
+          1473
+        ],
+        [
+          2822,
+          2838
+        ],
+        [
+          2966,
+          2983
+        ],
+        [
+          3279,
+          3296
+        ],
+        [
+          4539,
+          4560
+        ]
+      ],
+      [
+        [
+          433,
+          442
+        ],
+        [
+          635,
+          644
+        ],
+        [
+          1725,
+          1734
+        ],
+        [
+          1789,
+          1798
+        ],
+        [
+          2457,
+          2466
+        ],
+        [
+          3218,
+          3227
+        ],
+        [
+          3232,
+          3241
+        ],
+        [
+          5248,
+          5257
+        ]
+      ]
+    ]
+  },
+  {
+    "input_sequence": "yes walk old baby fast teach hello dance woman cold building fire house fast small new grey forest get tired dog want hello river book woman eat give weak want cold house sad cold tree teach new forest tree house sleep often forest walk write fly swim light woman have yellow cool new happy white dance have hate study no play walk slow baby friend good red music study need never grey goodbye man building air forest adult dog strong person goodbye good new have boy fly dry think house angry run never strong never dry sing write fly maybe read friend walk like building air forest adult learn want maybe rarely earth sometimes river plane sleep cat yes write get angry sing air sing girl give happy tree work love need mountain strong wake eat red rarely white grey river take get want sleep study learn dance excited forest river car happy book light light calm dark want fire cool cat tired car ship fly air forest adult read teach wake hate green forest train angry big friend goodbye rarely jump friend hello hello sometimes maybe dance music yellow yes light calm slow cold weak baby tree like white sing run swim yellow old often boy teach like need yes yellow want house street give tree write family think weak dark plane book building air forest adult walk swim like angry fast learn sad tree yes dance fast earth car man work sad black adult air black water sleep water black strong ocean sad big fire play no need eat cool write bad rarely girl grey think jump strong small fire fire mountain cat grey play air take building air forest adult white calm often walk big ship jump fly person run swim slow house green think drink tired train black girl dry friend good woman plane sing sleep yellow street strong big work new play ocean never sometimes write swim often write new grey weak car man man cool calm ship dry river child goodbye write big fast dark read play run often tired eat family happy love calm new no building air forest adult dance sing car yellow jump light work wake work boy dry walk fast friend fly happy play excited train wake excited walk take baby yes need light man ship study have child drink drink air angry yellow baby eat excited building like old red hot study always like man get hot man think read girl write building air forest adult book old like hello air study cool slow big love tree tree love dry green teach often music want person mountain calm always ocean make drink book friend slow like sing small hate adult red sleep eat tired forest tree drink light study hate earth sleep often music ship tree adult get want bad sleep warm study family air new red black jump get learn new music house sometimes study no plane walk fire like like book river air dry weak calm angry car book blue rarely yes happy make light baby no calm black drink light give man angry light make wake new have house read yellow car air take calm bad sometimes good house green river river child woman building forest child book hate family cat house forest hello girl family ship run dance wake car teach family study yes excited new fast study read blue cool friend sing old take run book work often music read plane good wet drink play bad light drink music ocean small write angry teach ship need train give water ocean cat teach ship black black building new eat cat often maybe angry yellow often music fly dog play angry no give river earth happy cat read yes wake warm work like work dry hot woman often music blue ship tree street cold man think river fast friend slow big sing always think adult child excited read goodbye fast run often music blue person yes street sad big never rarely ship cat take child woman take yellow blue think fast adult fast earth make warm mountain cat small air building dry hello yes ship water cat weak give take plane drink play cold good wake read street grey train fire air forest adult run often music river woman happy learn green love sad read swim yellow fire angry ocean run music have think dark dry yellow like big yes tree want building dance hello slow forest think fire forest fly train play get street work cold air air air think have family write cool good light light train grey train never car maybe weak street maybe have cold sometimes strong cat tired forest maybe have forest music dry eat yellow earth sad plane plane music work green play like house angry eat sing give girl always child fast jump sleep ocean fire train tired dry yes light light music plane friend light hello sing give mountain often music air forest adult ship small yes tired often calm wet boy eat bad play maybe sleep play river run music friend cat good black light no ocean green maybe car study ocean dance angry water blue grey new woman maybe ship yes fire ship book learn cat wake bad read like yes wet need eat always good cool forest big get new ocean grey baby walk person need teach new girl need water learn river slow man family person hello strong bad person make car tree work forest good slow sometimes ocean bad goodbye small take house adult have strong street need wet hate teach always family hello music think small like excited book drink new fly maybe love think often often man child write fire often music often wet hate cat walk hate maybe sad no ocean car person slow small love small baby child play drink walk bad slow make sad cold goodbye new forest tired eat weak good hello black grey teach drink hate eat swim grey book goodbye light light mountain get no",
+    "queries": [
+      {
+        "natural_language": "Find all sequences matching 'light light' that are not preceded by 'good'",
+        "pattern": "light light",
+        "constraint_type": "not_preceded_by",
+        "constraint_pattern": "good"
+      },
+      {
+        "natural_language": "Find all sequences matching 'like \\w+ \\w+' that are followed by 'hot'",
+        "pattern": "like \\w+ \\w+",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "hot"
+      },
+      {
+        "natural_language": "Find all sequences matching 'air forest adult' that are preceded by 'building'",
+        "pattern": "air forest adult",
+        "constraint_type": "preceded_by",
+        "constraint_pattern": "building"
+      },
+      {
+        "natural_language": "Find all sequences matching '\\w+ \\w+' that are followed by 'teach'",
+        "pattern": "\\w+ \\w+",
+        "constraint_type": "followed_by",
+        "constraint_pattern": "teach"
+      },
+      {
+        "natural_language": "Find all sequences matching '\\w+ often music' that are not followed by 'blue'",
+        "pattern": "\\w+ often music",
+        "constraint_type": "not_followed_by",
+        "constraint_pattern": "blue"
+      }
+    ],
+    "answers": [
+      [
+        [
+          848,
+          860
+        ],
+        [
+          4431,
+          4443
+        ],
+        [
+          5430,
+          5442
+        ]
+      ],
+      [
+        [
+          2183,
+          2196
+        ],
+        [
+          2213,
+          2226
+        ],
+        [
+          3413,
+          3427
+        ]
+      ],
+      [
+        [
+          406,
+          423
+        ],
+        [
+          572,
+          589
+        ],
+        [
+          1246,
+          1263
+        ],
+        [
+          1538,
+          1555
+        ],
+        [
+          1940,
+          1957
+        ],
+        [
+          2265,
+          2282
+        ]
+      ],
+      [
+        [
+          12,
+          22
+        ],
+        [
+          174,
+          184
+        ],
+        [
+          919,
+          930
+        ],
+        [
+          1132,
+          1142
+        ],
+        [
+          2346,
+          2356
+        ],
+        [
+          3022,
+          3031
+        ],
+        [
+          3204,
+          3216
+        ],
+        [
+          3249,
+          3259
+        ],
+        [
+          4844,
+          4856
+        ],
+        [
+          5052,
+          5061
+        ],
+        [
+          5375,
+          5386
+        ]
+      ],
+      [
+        [
+          2356,
+          2374
+        ],
+        [
+          2529,
+          2547
+        ],
+        [
+          3122,
+          3139
+        ],
+        [
+          3321,
+          3340
+        ],
+        [
+          3863,
+          3879
+        ],
+        [
+          4484,
+          4505
+        ],
+        [
+          5182,
+          5199
+        ]
+      ]
+    ]
+  }
+]
