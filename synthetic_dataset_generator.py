@@ -13,6 +13,7 @@ from dataclasses import dataclass
 from enum import Enum
 import json
 
+random.seed(432)
 
 class GenerationMode(Enum):
     CHARACTER = "character"
@@ -28,11 +29,11 @@ class GenerationConfig:
     num_examples: int = 10
     num_queries_per_example: int = 5
     language: str = "en"
-    min_pattern_occurrences: int = 3
+    min_pattern_occurrences: int = 2
     max_pattern_occurrences: int = 8
     min_pattern_length: int = 2
     max_pattern_length: int = 3
-    wildcard_probability: float = 0.3  # Probability of using wildcard in pattern
+    wildcard_probability: float = 0.1  # Probability of using wildcard in pattern
 
 
 @dataclass
@@ -179,80 +180,100 @@ class CharacterSequenceGenerator:
         
         return queries
     
-    def inject_patterns(self, sequence: str, pattern: str, constraint_pattern: str, 
-                       constraint_type: str, min_occurrences: int, max_occurrences: int) -> str:
-        """Inject patterns into sequence ensuring both valid and invalid occurrences"""
+    def inject_patterns_batch(self, sequence: str, queries: List[Query], 
+                             min_occurrences: int, max_occurrences: int) -> str:
+        """Inject patterns for all queries at once to avoid conflicts"""
         sequence = list(sequence)
-        pattern_regex = pattern.replace('.', f'[{self.alphabet}]')
+        sequence_length = len(sequence)
         
-        # Find suitable positions for injection
-        valid_positions = []
-        invalid_positions = []
+        # Pick a random number of patterns for each query in the range [min, max]
+        patterns_per_query = [random.randint(min_occurrences, max_occurrences) for _ in queries]
+        total_patterns = sum(patterns_per_query)
         
-        pattern_length = len(pattern)
+        max_pattern_length = max(len(q.pattern) for q in queries)
+        min_spacing_per_pattern = max_pattern_length + 2  # +2 for context
         
-        for i in range(len(sequence) - pattern_length + 1):
-            if constraint_type == "not_preceded_by":
-                if i == 0 or sequence[i-1] != constraint_pattern:
-                    valid_positions.append(i)
-                else:
-                    invalid_positions.append(i)
-            elif constraint_type == "not_followed_by":
-                if i + pattern_length >= len(sequence) or sequence[i + pattern_length] != constraint_pattern:
-                    valid_positions.append(i)
-                else:
-                    invalid_positions.append(i)
-            elif constraint_type == "preceded_by":
-                if i > 0 and sequence[i-1] == constraint_pattern:
-                    valid_positions.append(i)
-                else:
-                    invalid_positions.append(i)
-            elif constraint_type == "followed_by":
-                if i + pattern_length < len(sequence) and sequence[i + pattern_length] == constraint_pattern:
-                    valid_positions.append(i)
-                else:
-                    invalid_positions.append(i)
+        required_length = total_patterns * min_spacing_per_pattern
         
-        # Inject patterns
-        max_valid_possible = min(max_occurrences, len(valid_positions))
-        if max_valid_possible >= min_occurrences:
-            num_valid = random.randint(min_occurrences, max_valid_possible)
-        else:
-            num_valid = min(max_valid_possible, 1) if max_valid_possible > 0 else 0
+        # Extend sequence if needed
+        if required_length > sequence_length:
+            additional_length = required_length - sequence_length
+            sequence.extend(random.choices(self.alphabet, k=additional_length))
+            sequence_length = len(sequence)
         
-        max_invalid_possible = min(3, len(invalid_positions))
-        if max_invalid_possible > 0:
-            num_invalid = random.randint(1, max_invalid_possible)
-        else:
-            num_invalid = 0
+        spacing = max(min_spacing_per_pattern, sequence_length // (total_patterns + 1))
         
-        # Generate concrete pattern
-        concrete_pattern = ""
-        for char in pattern:
-            if char == '.':
-                concrete_pattern += random.choice(self.alphabet)
-            else:
-                concrete_pattern += char
+        # Track used positions to prevent overlaps
+        used_positions = set()
         
-        # Inject valid patterns
-        selected_valid = random.sample(valid_positions, min(num_valid, len(valid_positions)))
-        for pos in selected_valid:
-            for j, char in enumerate(concrete_pattern):
-                if pos + j < len(sequence):
-                    sequence[pos + j] = char
-        
-        # Inject invalid patterns
-        selected_invalid = random.sample(invalid_positions, min(num_invalid, len(invalid_positions)))
-        for pos in selected_invalid:
-            for j, char in enumerate(concrete_pattern):
-                if pos + j < len(sequence):
-                    sequence[pos + j] = char
+        # Inject patterns for each query
+        position_offset = 0
+        for query_idx, query in enumerate(queries):
+            pattern_length = len(query.pattern)
+            num_patterns = patterns_per_query[query_idx]
             
-            # Ensure constraint is violated
-            if constraint_type == "not_preceded_by" and pos > 0:
-                sequence[pos - 1] = constraint_pattern
-            elif constraint_type == "not_followed_by" and pos + pattern_length < len(sequence):
-                sequence[pos + pattern_length] = constraint_pattern
+            # Generate concrete pattern
+            concrete_pattern = ""
+            for char in query.pattern:
+                if char == '.':
+                    concrete_pattern += random.choice(self.alphabet)
+                else:
+                    concrete_pattern += char
+            
+            # Inject the exact number of patterns for this query
+            for pattern_num in range(num_patterns):
+                # Calculate position - distribute patterns across the sequence
+                base_pos = position_offset * spacing + 1
+                
+                # Ensure we don't go out of bounds
+                if base_pos + pattern_length + 1 >= sequence_length:
+                    base_pos = sequence_length - pattern_length - 2
+                    if base_pos < 1:
+                        base_pos = 1
+                
+                # Inject the pattern
+                for j, char in enumerate(concrete_pattern):
+                    if base_pos + j < sequence_length:
+                        sequence[base_pos + j] = char
+                
+                # Mark positions as used
+                for j in range(base_pos - 1, base_pos + pattern_length + 1):
+                    used_positions.add(j)
+                
+                # Ensure constraint is satisfied
+                if query.constraint_type == "not_preceded_by":
+                    if base_pos > 0:
+                        sequence[base_pos - 1] = random.choice([c for c in self.alphabet if c != query.constraint_pattern])
+                elif query.constraint_type == "not_followed_by":
+                    if base_pos + pattern_length < sequence_length:
+                        sequence[base_pos + pattern_length] = random.choice([c for c in self.alphabet if c != query.constraint_pattern])
+                elif query.constraint_type == "preceded_by":
+                    if base_pos > 0:
+                        sequence[base_pos - 1] = query.constraint_pattern
+                    else:
+                        base_pos = 1
+                        for j, char in enumerate(concrete_pattern):
+                            if base_pos + j < sequence_length:
+                                sequence[base_pos + j] = char
+                        sequence[base_pos - 1] = query.constraint_pattern
+                elif query.constraint_type == "followed_by":
+                    if base_pos + pattern_length < sequence_length:
+                        sequence[base_pos + pattern_length] = query.constraint_pattern
+                    else:
+                        base_pos = max(0, sequence_length - pattern_length - 2)
+                        for j, char in enumerate(concrete_pattern):
+                            if base_pos + j < sequence_length:
+                                sequence[base_pos + j] = char
+                        if base_pos + pattern_length < sequence_length:
+                            sequence[base_pos + pattern_length] = query.constraint_pattern
+                
+                position_offset += 1
+        
+        # Fill unused positions with characters that don't create additional matches
+        for i, char in enumerate(sequence):
+            if i not in used_positions:
+                # Use a character that's less likely to create unintended matches
+                sequence[i] = random.choice(self.alphabet)
         
         return ''.join(sequence)
 
@@ -329,89 +350,107 @@ class WordSequenceGenerator:
         
         return queries
     
-    def inject_patterns(self, sequence: str, pattern: str, constraint_pattern: str,
-                       constraint_type: str, min_occurrences: int, max_occurrences: int) -> str:
-        """Inject word patterns into sequence ensuring both valid and invalid occurrences"""
+    def inject_patterns_batch(self, sequence: str, queries: List[Query],
+                             min_occurrences: int, max_occurrences: int) -> str:
+        """Inject word patterns for all queries at once to avoid conflicts"""
         words = sequence.split()
-        
-        # Generate concrete pattern instances
-        concrete_patterns = []
-        pattern_parts = pattern.split()
+        sequence_length = len(words)
         
         vocab = self.vocab_manager.get_vocabulary(self.language)
         
-        for _ in range(max_occurrences + 2):
+        # Pick a random number of patterns for each query in the range [min, max]
+        patterns_per_query = [random.randint(min_occurrences, max_occurrences) for _ in queries]
+        total_patterns = sum(patterns_per_query)
+        
+        max_pattern_length = max(len(q.pattern.split()) for q in queries)
+        min_spacing_per_pattern = max_pattern_length + 2  # +2 for context
+        
+        required_length = total_patterns * min_spacing_per_pattern
+        
+        # Extend sequence if needed
+        if required_length > sequence_length:
+            additional_words = required_length - sequence_length
+            words.extend(self.vocab_manager.get_random_words(self.language, additional_words))
+            sequence_length = len(words)
+        
+        spacing = max(min_spacing_per_pattern, sequence_length // (total_patterns + 1))
+        
+        # Track used positions to prevent overlaps
+        used_positions = set()
+        
+        # Generate concrete pattern function
+        def generate_concrete_pattern(pattern_str):
             concrete_pattern = []
-            for part in pattern_parts:
+            for part in pattern_str.split():
                 if part == "\\w+":
                     concrete_pattern.append(random.choice(vocab))
                 else:
                     concrete_pattern.append(part)
-            concrete_patterns.append(concrete_pattern)
+            return concrete_pattern
         
-        # Find positions and inject patterns
-        pattern_length = len(pattern_parts)
-        valid_positions = []
-        invalid_positions = []
-        
-        for i in range(len(words) - pattern_length + 1):
-            if constraint_type == "not_preceded_by":
-                if i == 0 or words[i-1] != constraint_pattern:
-                    valid_positions.append(i)
-                else:
-                    invalid_positions.append(i)
-            elif constraint_type == "not_followed_by":
-                if i + pattern_length >= len(words) or words[i + pattern_length] != constraint_pattern:
-                    valid_positions.append(i)
-                else:
-                    invalid_positions.append(i)
-            elif constraint_type == "preceded_by":
-                if i > 0 and words[i-1] == constraint_pattern:
-                    valid_positions.append(i)
-                else:
-                    invalid_positions.append(i)
-            elif constraint_type == "followed_by":
-                if i + pattern_length < len(words) and words[i + pattern_length] == constraint_pattern:
-                    valid_positions.append(i)
-                else:
-                    invalid_positions.append(i)
-        
-        # Inject valid patterns
-        max_valid_possible = min(max_occurrences, len(valid_positions), len(concrete_patterns))
-        if max_valid_possible >= min_occurrences:
-            num_valid = random.randint(min_occurrences, max_valid_possible)
-        else:
-            num_valid = min(max_valid_possible, 1) if max_valid_possible > 0 else 0
-        
-        selected_valid = random.sample(valid_positions, min(num_valid, len(valid_positions)))
-        
-        for idx, pos in enumerate(selected_valid):
-            if idx < len(concrete_patterns):
-                concrete_pattern = concrete_patterns[idx]
-                for j, word in enumerate(concrete_pattern):
-                    if pos + j < len(words):
-                        words[pos + j] = word
-        
-        # Inject invalid patterns
-        max_invalid_possible = min(2, len(invalid_positions), len(concrete_patterns) - num_valid)
-        if max_invalid_possible > 0:
-            num_invalid = random.randint(1, max_invalid_possible)
-        else:
-            num_invalid = 0
-        selected_invalid = random.sample(invalid_positions, min(num_invalid, len(invalid_positions)))
-        
-        for idx, pos in enumerate(selected_invalid):
-            if num_valid + idx < len(concrete_patterns):
-                concrete_pattern = concrete_patterns[num_valid + idx]
-                for j, word in enumerate(concrete_pattern):
-                    if pos + j < len(words):
-                        words[pos + j] = word
+        # Inject patterns for each query
+        position_offset = 0
+        for query_idx, query in enumerate(queries):
+            pattern_parts = query.pattern.split()
+            pattern_length = len(pattern_parts)
+            num_patterns = patterns_per_query[query_idx]
+            
+            # Inject the exact number of patterns for this query
+            for pattern_num in range(num_patterns):
+                # Calculate position - distribute patterns across the sequence
+                base_pos = position_offset * spacing + 1
                 
-                # Ensure constraint is violated
-                if constraint_type == "not_preceded_by" and pos > 0:
-                    words[pos - 1] = constraint_pattern
-                elif constraint_type == "not_followed_by" and pos + pattern_length < len(words):
-                    words[pos + pattern_length] = constraint_pattern
+                # Ensure we don't go out of bounds
+                if base_pos + pattern_length + 1 >= sequence_length:
+                    base_pos = sequence_length - pattern_length - 2
+                    if base_pos < 1:
+                        base_pos = 1
+                
+                # Generate and inject concrete pattern
+                concrete_pattern = generate_concrete_pattern(query.pattern)
+                for j, word in enumerate(concrete_pattern):
+                    if base_pos + j < sequence_length:
+                        words[base_pos + j] = word
+                
+                # Mark positions as used
+                for j in range(base_pos - 1, base_pos + pattern_length + 1):
+                    if 0 <= j < sequence_length:
+                        used_positions.add(j)
+                
+                # Ensure constraint is satisfied
+                if query.constraint_type == "not_preceded_by":
+                    if base_pos > 0:
+                        # Choose a word that's NOT the constraint pattern
+                        words[base_pos - 1] = random.choice([w for w in vocab if w != query.constraint_pattern])
+                elif query.constraint_type == "not_followed_by":
+                    if base_pos + pattern_length < sequence_length:
+                        words[base_pos + pattern_length] = random.choice([w for w in vocab if w != query.constraint_pattern])
+                elif query.constraint_type == "preceded_by":
+                    if base_pos > 0:
+                        words[base_pos - 1] = query.constraint_pattern
+                    else:
+                        base_pos = 1
+                        for j, word in enumerate(concrete_pattern):
+                            if base_pos + j < sequence_length:
+                                words[base_pos + j] = word
+                        words[base_pos - 1] = query.constraint_pattern
+                elif query.constraint_type == "followed_by":
+                    if base_pos + pattern_length < sequence_length:
+                        words[base_pos + pattern_length] = query.constraint_pattern
+                    else:
+                        base_pos = max(0, sequence_length - pattern_length - 2)
+                        for j, word in enumerate(concrete_pattern):
+                            if base_pos + j < sequence_length:
+                                words[base_pos + j] = word
+                        if base_pos + pattern_length < sequence_length:
+                            words[base_pos + pattern_length] = query.constraint_pattern
+                
+                position_offset += 1
+        
+        # Fill unused positions with random words to prevent accidental matches
+        for i in range(sequence_length):
+            if i not in used_positions:
+                words[i] = random.choice(vocab)
         
         return ' '.join(words)
 
@@ -500,16 +539,13 @@ class SyntheticDatasetGenerator:
         # Generate queries
         queries = self.sequence_generator.generate_queries()
         
-        # Inject patterns for each query to ensure meaningful examples
-        for query in queries:
-            sequence = self.sequence_generator.inject_patterns(
-                sequence, 
-                query.pattern, 
-                query.constraint_pattern,
-                query.constraint_type,
-                self.config.min_pattern_occurrences,
-                self.config.max_pattern_occurrences
-            )
+        # Inject patterns for ALL queries at once to avoid conflicts
+        sequence = self.sequence_generator.inject_patterns_batch(
+            sequence,
+            queries,
+            self.config.min_pattern_occurrences,
+            self.config.max_pattern_occurrences
+        )
         
         # Find answers for each query
         answers = []
@@ -562,12 +598,13 @@ def main():
     char_config = GenerationConfig(
         mode=GenerationMode.CHARACTER,
         alphabet_size=4,
-        sequence_length=50,
-        num_examples=5,
+        sequence_length=100,
+        num_examples=100,
         num_queries_per_example=5,
         min_pattern_length=2,
-        max_pattern_length=4,
-        wildcard_probability=0.4
+        max_pattern_length=3,
+        wildcard_probability=0.4,
+        language="en"
     )
     
     char_generator = SyntheticDatasetGenerator(char_config)
@@ -580,21 +617,25 @@ def main():
     print(f"Input: {example.input_sequence}")
     for i, (query, answer) in enumerate(zip(example.queries, example.answers)):
         print(f"Query {i+1}: {query.natural_language}")
-        print(f"Matches: {answer}")
+        print(f"Matches ({len(answer)}): {answer}")
     
     # Word-level example
     print("\n" + "="*50)
     print("Generating word-level dataset...")
     word_config = GenerationConfig(
         mode=GenerationMode.WORD,
-        sequence_length=30,
-        num_examples=5,
-        language="en"
+        sequence_length=60,
+        num_examples=100,
+        language="en",
+        min_pattern_length=1,
+        max_pattern_length=2,
+        wildcard_probability=0.3,
     )
     
     word_generator = SyntheticDatasetGenerator(word_config)
     word_dataset = word_generator.generate_dataset()
-    word_generator.save_dataset(word_dataset, "word_dataset.json")
+    print(len(word_dataset))
+    word_generator.save_dataset(word_dataset, "english_word_dataset.json")
     
     # Print example
     example = word_dataset[0]
@@ -602,19 +643,19 @@ def main():
     print(f"Input: {example.input_sequence}")
     for i, (query, answer) in enumerate(zip(example.queries, example.answers)):
         print(f"Query {i+1}: {query.natural_language}")
-        print(f"Matches: {answer}")
+        print(f"Matches ({len(answer)}): {answer}")
     
     # Multi-language example
     print("\n" + "="*50)
     print("Generating German word-level dataset...")
     german_config = GenerationConfig(
         mode=GenerationMode.WORD,
-        sequence_length=25,
-        num_examples=3,
+        sequence_length=60,
+        num_examples=100,
         language="de",
         min_pattern_length=1,
         max_pattern_length=2,
-        wildcard_probability=0.3
+        wildcard_probability=0.3,
     )
     
     german_generator = SyntheticDatasetGenerator(german_config)
@@ -626,7 +667,7 @@ def main():
     print(f"Input: {example.input_sequence}")
     for i, (query, answer) in enumerate(zip(example.queries, example.answers)):
         print(f"Query {i+1}: {query.natural_language}")
-        print(f"Matches: {answer}")
+        print(f"Matches ({len(answer)}): {answer}")
 
 
 if __name__ == "__main__":
